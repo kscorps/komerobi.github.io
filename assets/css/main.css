@@ -25,14 +25,13 @@ h1 {
 
 .display-4 {
     margin: 1em;
-    font-size: 3.5rem;
     font-weight: 300;
     line-height: 1.2;
 }
 
 .display-5 {
     margin: 3em;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-weight: 300;
     line-height: 1.2;
 }
@@ -50,14 +49,10 @@ h1 {
     background-color: #000000;
 }
 
-.carousel-item img {
-    width: 1160px;
-    height: 400px;
-}
-
 #gallery {
-    border: 1px solid red;
-    box-shadow: 1px 1px 2px 2px red;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.2em;
+    margin-bottom: 2em;
 }
 
 .spacer {
@@ -72,6 +67,6 @@ h1 {
     color: #000000;
 }
 
-.brands-list li {
-    margin-left: 20em;
+.navbar-brand img {
+    height: 90px;
 }
