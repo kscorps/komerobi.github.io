@@ -8,13 +8,11 @@ from flask_mail import Mail, Message
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
-# app.config[MAIL_USERNAME] = os.environ['USER_EMAIL']
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config["MAIL_USERNAME"] = "email_id"
-app.config["MAIL_PASSWORD"] = "password"
-# app.config[MAIL_PASSWORD] = os.environ['USER_PASSWORD']
+app.config["MAIL_USERNAME"] = os.environ.get('USER_EMAIL')
+app.config["MAIL_PASSWORD"] = os.environ.get('USER_PASSWORD')
 mail = Mail(app)
 
 class MessageForm(FlaskForm):
