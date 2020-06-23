@@ -8,10 +8,10 @@
 
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="{{url_for('static', filename= 'css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename= 'css/main.css')}}">
 
-    <link rel="icon" href="assets/images/favicon.png" type="image/gif" sizes="30x30">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="icon" href="{{url_for('static', filename= 'images/favicon.png')}}" type="image/gif" sizes="30x30">
     <title>Komerobi Sales Corp.</title>
 </head>
 
@@ -19,23 +19,21 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="./assets/images/logo.svg" alt=""></a>
+            <a class="navbar-brand" href="{{url_for('home')}}"><img src="{{url_for('static', filename= 'images/logo.svg')}}" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item ml-2">
-                        <a class="nav-link btn btn-outline-danger" href="products.html">Prducts</a>
-                    </li>
-                    <li class="nav-item ml-2">
-                        <a class="nav-link btn btn-outline-danger" href="about_us.html">About Us</a>
-                    </li>
+                    <li class="nav-item ml-2"><a class="btn btn-outline-danger" href="{{url_for('contact_us')}}">Contact Us</a></li>
+                    <li class="nav-item ml-2"><a class="btn btn-outline-danger" href="{{url_for('products')}}">Prducts</a></li>
+                    <li class="nav-item ml-2"><a class="btn btn-outline-danger" href="{{url_for('about_us')}}">About Us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+    {% block content %}
     <div class="container">
         <hr>
         <h2 class="center">Looking for right supplies at right price? <br> You have reached the right place
@@ -65,10 +63,14 @@
             </div>
             <br>
             <div class="col-sm-4 mb-2" style="border:1px solid rgba(0,0,0,0.1)">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.014830544074!2d73.8038333149007!3d18.66333046966354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9663e95fd63%3A0xb86cbf1dc1d84fa5!2sKomorebi%20Sales%20Corporation!5e0!3m2!1sen!2sin!4v1592796181924!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.014830544074!2d73.8038333149007!3d18.66333046966354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9663e95fd63%3A0xb86cbf1dc1d84fa5!2sKomorebi%20Sales%20Corporation!5e0!3m2!1sen!2sin!4v1592796181924!5m2!1sen!2sin"
+                    width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
             </div>
         </div>
     </div>
+    {% endblock content %}
     <div class="spacer"></div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -78,8 +80,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
 </body>
 
 </html>
