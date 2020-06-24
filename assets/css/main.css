@@ -40,19 +40,28 @@ h1 {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 0.2em;
     margin-bottom: 2em;
-    height: 25em;
 }
 
 .spacer {
     padding: 5%;
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
-    padding: 1em;
-    margin: 1em;
-    background-color: rgb(255, 0, 0);
-    border-radius: 50%;
-    color: #000000;
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: auto;
+    color: #fff;
+    text-align: center;
+    opacity: 0.5;
+    transition: opacity 0.15s ease;
 }
 
 .navbar-brand img {
