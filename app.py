@@ -43,7 +43,7 @@ def contact_us():
     form = MessageForm()
     if form.validate_on_submit():
         name, email, message = (form.name.data, form.email.data, form.phone.data, form.message.data)
-        msg = Message('', sender='komerobisalescorporation@gmail.com', recipients=['atharvakadlag@gmail.com'])
+        msg = Message('', sender='komerobisalescorporation@gmail.com', recipients=['komerobisalescorporation@gmail.com'])
         msg.body = f'''
         New message recieved from your website:
 
