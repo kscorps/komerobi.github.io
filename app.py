@@ -1,3 +1,4 @@
+#! usr/bin/python
 import os
 from flask import Flask, render_template, redirect, url_for
 from wtforms import StringField, TextAreaField, IntegerField, SubmitField
@@ -43,7 +44,7 @@ def contact_us():
     form = MessageForm()
     if form.validate_on_submit():
         name, email, phone, message = (form.name.data, form.email.data, form.phone.data, form.message.data)
-        msg = Message('', sender='atharva.komorebi@gmail.com', recipients=['komerobisalescorporation@gmail.com, atharva.komorebi@gmail.com'])
+        msg = Message('', sender='webserver.komerobisalescorporation@gmail.com', recipients=['komerobisalescorporation@gmail.com, atharvakadlag@gmail.com'])
         msg.body = f'''
         New message recieved from your website:
 
@@ -60,4 +61,4 @@ def contact_us():
     return render_template('contact_us.html', form=form)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=os.environ.get('DEBUG'))
