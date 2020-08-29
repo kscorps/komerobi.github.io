@@ -56,6 +56,7 @@ def contact_us():
         >>>Have a good day!
         '''
         mail.send(msg)
+        print("Message sent")
         return redirect(url_for('home'))
     return render_template('contact_us.html', form=form)
 
